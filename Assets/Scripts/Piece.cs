@@ -12,6 +12,5 @@ public abstract class Piece : MonoBehaviour
     }
 
     public abstract void Activate();
-
-
+    internal abstract bool Move(Tile tile);
 }
