@@ -7,11 +7,20 @@ using UnityEngine.EventSystems;
 public class Tile : MonoBehaviour, IPointerClickHandler
 {
 
+    [SerializeField]
+    private Material _defaultMaterial;
+
+    [SerializeField]
+    private Material _highlightMaterial;
+
     private Board _board;
+
+    private Renderer _renderer;
 
     private void OnEnable()
     {
-        _board = FindObjectOfType<Board>();           
+        _board = FindObjectOfType<Board>();
+        _renderer = GetComponentInChildren<Renderer>();
     }
 
 
@@ -22,6 +31,11 @@ public class Tile : MonoBehaviour, IPointerClickHandler
 
     internal void Hightlight()
     {
-        Debug.Log($"Tile {gameObject.name} Highlighted");
+        _renderer.material = _highlightMaterial;
+    }
+
+    internal void UnHightlight()
+    {
+        _renderer.material = _defaultMaterial;
     }
 }

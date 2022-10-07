@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -265698192753326901, guid: 1dd93a175a70b1348b81ebbe43235fff, type: 3}
+      propertyPath: _defaultMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: caa0a370cda7fc0428fa8d4fdba6d028, type: 2}
     - target: {fileID: 92027809587986837, guid: 1dd93a175a70b1348b81ebbe43235fff, type: 3}
       propertyPath: m_Name
       value: TileBlack
