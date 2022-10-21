@@ -1,9 +1,16 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class Piece : MonoBehaviour
 {
+    [SerializeField]
+    private Player _player;
+
+    public Player Player => _player;
+
+
     protected Board Board;
 
     private void OnEnable()
@@ -11,6 +18,13 @@ public abstract class Piece : MonoBehaviour
         Board = FindObjectOfType<Board>();
     }
 
-    public abstract void Activate();
-    internal abstract bool Move(Tile tile);
+    public abstract List<Tile> GetValidTiles();
+
+
+    internal void Move(Tile tile)
+        => transform.position = tile.transform.position;
+
+    internal void Take()
+        => gameObject.SetActive(false);
+    
 }
